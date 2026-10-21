@@ -5,13 +5,13 @@ Atue como engenheiro full-stack sênior, designer de conversão e especialista e
 ## Referências e arquivos de entrada
 - Use `index.html` e as imagens JPG incluídas no pacote como base visual funcional, não descarte o conteúdo aprovado.
 - O e-book original de 39 páginas é a fonte de verdade para o conteúdo: receita-base de massa, chocotone, receitas de ganache, brigadeiro, creme de leite em pó e doce de leite, montagem, decoração, rotulagem, armazenamento, custos e preços.
-- Os bônus são arquivos complementares separados: `bonus_cardapio.html`, `bonus_precificacao.xlsx` e `bonus_etiquetas.pdf`.
+- Os bônus são materiais complementares separados: Controle de Encomendas Natalinas, Etiquetas e Precificação.
 
 ## Configuração comercial
 - Produto: Receita de Panetone Gourmet Fácil.
 - Formato: PDF digital ilustrado para iniciantes.
 - Preço final: **R$ 14,90** em pagamento único; não exibir preço antigo fictício.
-- Bônus incluídos sem custo adicional: (1) cardápio digital personalizável, (2) planilha XLSX de precificação, (3) etiquetas imprimíveis A4.
+- Bônus incluídos sem custo adicional: (1) Controle de Encomendas Natalinas, (2) Etiquetas, (3) Precificação.
 - Garantia anunciada: 7 dias; incorporar os termos verdadeiros e mecanismo de suporte antes de publicar.
 - Checkout: **não definido**. Criar variável de ambiente `NEXT_PUBLIC_CHECKOUT_URL` ou configuração equivalente. Até que exista uma URL HTTPS válida, o CTA de pagamento NÃO deve simular conclusão de compra, criar pedidos fictícios ou direcionar para links imaginários.
 - O delivery digital do guia e dos bônus deve ser feito de forma segura, preferencialmente pela plataforma de pagamento após confirmação. Não expor publicamente PDFs pagos por URL previsível sem autorização.

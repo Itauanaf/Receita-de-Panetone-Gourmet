@@ -3,5 +3,5 @@
  * Enquanto estiver vazia, a interface informa que o checkout não está disponível.
  */
 window.PANETONE_CONFIG = {
-  checkoutUrl: ""
+  checkoutUrl: "https://pay.wiapy.com/TSHXIRyJlIll"
 };
