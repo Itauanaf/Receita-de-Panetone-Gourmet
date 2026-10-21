@@ -1,0 +1,29 @@
+PÁGINA DE VENDAS — PANETONE GOURMET FÁCIL
+
+TESTE LOCAL
+1. Abra index.html no navegador. Para testar em um servidor local, execute um servidor estático dentro desta pasta.
+2. Confira a página em 360 px, 390 px, 768 px, 1024 px e 1440 px.
+
+CHECKOUT
+1. Antes de publicar, insira em config.js uma URL HTTPS real fornecida pela plataforma de pagamento.
+2. Enquanto a URL estiver vazia ou não começar com https://, o botão informa que o checkout está em configuração e não cria pedidos.
+3. Em uma futura migração para Next.js ou Vite, use a variável indicada em .env.example e nunca exponha credenciais no frontend.
+
+PENDÊNCIAS OBRIGATÓRIAS ANTES DA VENDA
+- Informar e testar o e-mail ou canal de suporte.
+- Informar o nome ou a razão social do responsável.
+- Publicar as URLs da política de privacidade, dos termos de compra e da política de reembolso.
+- Confirmar as condições da garantia de 7 dias com a plataforma escolhida.
+- Testar pagamento, confirmação e entrega em ambiente de testes da plataforma.
+
+PUBLICAÇÃO SEGURA
+- Publique index.html, styles.css, config.js, site.js e os quatro arquivos JPG.
+- NÃO publique bonus_cardapio.html, bonus_precificacao.xlsx ou bonus_etiquetas.pdf junto com a página pública. Em hospedagem estática, esses arquivos ficariam acessíveis por URL.
+- Cadastre o guia e os três bônus na área segura da plataforma de pagamento e libere-os somente após a confirmação da compra.
+- As imagens JPG foram extraídas do material fornecido pelo titular e são usadas como prévias autorizadas.
+
+CONTEÚDO COMERCIAL
+- Preço exibido: R$ 14,90 em pagamento único.
+- Produto: guia digital ilustrado em PDF.
+- Bônus: cardápio digital, planilha de precificação e etiquetas imprimíveis.
+- Exemplos de custos e preços são ilustrativos. Não há promessa ou garantia de ganhos.
