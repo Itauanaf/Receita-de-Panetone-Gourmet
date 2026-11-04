@@ -5,7 +5,7 @@
   document.querySelectorAll("[data-checkout]").forEach((button) => {
     if (isSecureCheckout) {
       button.href = checkoutUrl;
-      button.textContent = "Comprar o guia por R$ 14,90";
+      button.textContent = "COMPRAR AGORA";
       button.removeAttribute("aria-disabled");
       return;
     }
