@@ -403,6 +403,22 @@ p {
   font-size: .94rem;
 }
 
+.spread-copy .module-list {
+  grid-template-columns: 1fr;
+  margin-top: 30px;
+  border-top-color: #ccb799;
+}
+
+.spread-copy .module-list li {
+  min-height: 0;
+  padding: 20px 0;
+  border-bottom-color: #ccb799;
+}
+
+.spread-copy .module-list h3 {
+  font-size: 1.25rem;
+}
+
 .flavors-section {
   background: var(--white);
 }
@@ -656,6 +672,312 @@ p {
   color: #f1d9d7;
 }
 
+/* Comparação sem guia x com guia */
+.compare-section {
+  background: var(--white);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 940px;
+  margin-inline: auto;
+}
+
+.compare-card {
+  padding: clamp(26px, 4vw, 40px);
+  border-radius: var(--radius);
+}
+
+.compare-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.compare-card li {
+  position: relative;
+  padding: 10px 0 10px 30px;
+  border-top: 1px solid var(--line);
+}
+
+.compare-card li::before {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.compare-without {
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--paper);
+}
+
+.compare-without li::before {
+  content: "✕";
+  color: #a0473f;
+}
+
+.compare-with {
+  color: #fbe9e6;
+  background: var(--wine);
+  box-shadow: var(--shadow);
+}
+
+.compare-with h3 {
+  color: var(--white);
+}
+
+.compare-with li {
+  border-top-color: rgba(255, 255, 255, .2);
+}
+
+.compare-with li::before {
+  content: "✓";
+  color: #f3d58f;
+}
+
+.centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* Bônus dentro da oferta */
+.bonus-heading {
+  margin: 34px 0 6px;
+  font-size: 1.3rem;
+}
+
+.bonus-list li {
+  padding: 16px 0;
+}
+
+/* Itens do card de preço */
+.offer-box .offer-items li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  padding: 12px 0;
+}
+
+.offer-box .offer-items li::before {
+  grid-row: span 2;
+  margin: 0;
+}
+
+.offer-items strong {
+  color: var(--cocoa);
+  font-size: .95rem;
+}
+
+.offer-items span {
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+/* Atalho no topo */
+.hero-peek {
+  margin: 18px 0 0;
+  font-size: .92rem;
+}
+
+/* Receita por dentro */
+.inside-section {
+  background: var(--white);
+}
+
+.inside-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 430px) 1fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+
+.inside-notes {
+  display: grid;
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inside-notes li {
+  padding-top: 16px;
+  border-top: 2px solid var(--gold);
+}
+
+.inside-left {
+  text-align: right;
+}
+
+.inside-notes strong,
+.inside-notes span {
+  display: block;
+}
+
+.inside-notes strong {
+  color: var(--cocoa);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.inside-notes span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.inside-page {
+  margin: 0;
+}
+
+.inside-page img {
+  border: 10px solid var(--white);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 900px) {
+  .inside-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .inside-page {
+    order: -1;
+    margin-bottom: 12px;
+  }
+
+  .inside-left {
+    text-align: left;
+  }
+
+  .inside-notes {
+    gap: 22px;
+  }
+}
+
+/* Depoimentos */
+.testimonials-section {
+  background: var(--flour);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 3vw, 36px);
+  max-width: 1020px;
+  margin-inline: auto;
+}
+
+.testimonial {
+  margin: 0;
+}
+
+.testimonial img {
+  width: 100%;
+  border: 8px solid var(--white);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 760px) {
+  .testimonials-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 78%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 14px;
+  }
+
+  .testimonial {
+    scroll-snap-align: center;
+  }
+}
+
+/* Nome do produto no card */
+.offer-name {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+/* Botão de compra */
+.button-buy {
+  border-color: #1f7a3a;
+  background: #1f7a3a;
+  font-size: 1.05rem;
+  box-shadow: 0 10px 24px rgba(31, 122, 58, .28);
+}
+
+.button-buy:hover {
+  border-color: #17602d;
+  background: #17602d;
+}
+
+/* Selo de garantia */
+.guarantee-section {
+  padding: 0 0 clamp(64px, 8vw, 110px);
+  background: var(--paper);
+}
+
+.guarantee-section .guarantee-box {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.guarantee-box {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 34px;
+  padding: 22px;
+  border: 1px solid #e4cf9f;
+  border-radius: var(--radius);
+  background: #fff4dc;
+}
+
+.guarantee-box h3 {
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+}
+
+.guarantee-box p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.seal {
+  flex: none;
+  width: 92px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px double #f3d58f;
+  border-radius: 50%;
+  color: #f3d58f;
+  background: radial-gradient(circle, #4a2a1f, var(--cocoa));
+  box-shadow: 0 0 0 4px var(--gold);
+  line-height: 1;
+}
+
+.seal strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.3rem;
+}
+
+.seal span {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
 .footer {
   padding: 45px 0 110px;
   color: #cebcb1;
@@ -695,13 +1017,16 @@ p {
     padding-top: 55px;
   }
 
+  /* No celular: título, texto e botão aparecem antes das imagens */
   .hero-copy {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-visual {
+    order: 1;
     width: min(560px, 100%);
-    margin: 0 auto;
+    margin: 40px auto 0;
   }
 
   .spread-grid,
@@ -727,6 +1052,17 @@ p {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .guarantee-box {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
