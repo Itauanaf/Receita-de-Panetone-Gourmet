@@ -776,12 +776,6 @@ p {
   line-height: 1.45;
 }
 
-/* Atalho no topo */
-.hero-peek {
-  margin: 18px 0 0;
-  font-size: .92rem;
-}
-
 /* Receita por dentro */
 .inside-section {
   background: var(--white);
@@ -1017,16 +1011,15 @@ p {
     padding-top: 55px;
   }
 
-  /* No celular: título, texto e botão aparecem antes das imagens */
+  /* No celular: título, imagem, texto e botão */
   .hero-copy {
     display: flex;
     flex-direction: column;
   }
 
   .hero-visual {
-    order: 1;
     width: min(560px, 100%);
-    margin: 40px auto 0;
+    margin: 4px auto 28px;
   }
 
   .spread-grid,
