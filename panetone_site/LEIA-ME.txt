@@ -1,28 +1,50 @@
 PÁGINA DE VENDAS — PANETONE GOURMET FÁCIL
+=========================================
 
-TESTE LOCAL
-1. Abra index.html no navegador. Para testar em um servidor local, execute um servidor estático dentro desta pasta.
-2. Confira a página em 360 px, 390 px, 768 px, 1024 px e 1440 px.
+Site estático (só HTML + imagens). Não precisa de build, framework nem servidor.
 
-CHECKOUT
-1. Antes de publicar, insira em config.js uma URL HTTPS real fornecida pela plataforma de pagamento.
-2. Enquanto a URL estiver vazia ou não começar com https://, o botão informa que o checkout está em configuração e não cria pedidos.
-3. Em uma futura migração para Next.js ou Vite, use a variável indicada em .env.example e nunca exponha credenciais no frontend.
+CONTEÚDO DA PASTA
+- index.html  → a página inteira (textos, estilos e scripts ficam dentro dele)
+- img/        → todas as imagens usadas (fotos, páginas de amostra e enfeites)
+- LEIA-ME.txt → este arquivo (pode ficar, não aparece no site)
 
-PENDÊNCIAS OBRIGATÓRIAS ANTES DA VENDA
-- Informar e testar o e-mail ou canal de suporte.
-- Informar o nome ou a razão social do responsável.
-- Publicar as URLs da política de privacidade, dos termos de compra e da política de reembolso.
-- Confirmar as condições da garantia de 7 dias com a plataforma escolhida.
-- Testar pagamento, confirmação e entrega em ambiente de testes da plataforma.
+COMO PUBLICAR NA VERCEL
+Opção A — arrastar e soltar (mais simples)
+  1. Entrar em vercel.com > Add New > Project.
+  2. Enviar esta pasta inteira (com index.html e img/ juntos).
+  3. Framework Preset: "Other". Build Command: vazio. Output Directory: vazio (raiz).
+  4. Deploy.
 
-PUBLICAÇÃO SEGURA
-- Publique index.html, styles.css, config.js, site.js e os quatro arquivos JPG.
-- Os arquivos de bônus não fazem parte desta pasta pública. Se forem entregues, cadastre-os diretamente na área segura da plataforma de pagamento.
-- As imagens JPG foram extraídas do material fornecido pelo titular e são usadas como prévias autorizadas.
+Opção B — pelo terminal
+  1. Abrir o terminal dentro desta pasta.
+  2. Rodar: npx vercel --prod
+  3. Nas perguntas, aceitar a pasta atual e deixar build/output vazios.
 
-CONTEÚDO COMERCIAL
-- Preço exibido: R$ 14,90 em pagamento único.
-- Produto: guia digital ilustrado em PDF.
-- Bônus: Controle de Encomendas Natalinas, Etiquetas e Precificação.
-- Exemplos de custos e preços são ilustrativos. Não há promessa ou garantia de ganhos.
+Para manter o mesmo endereço da página atual, publicar dentro do MESMO projeto
+da Vercel que hoje serve panetonegourmet.vercel.app.
+
+ANTES DE PUBLICAR (OBRIGATÓRIO)
+1. Pixel da Meta + Utmify
+   No index.html, procure a linha:
+     <!-- PIXEL META + UTMIFY: colar aqui os mesmos scripts da página atual antes de publicar -->
+   Cole ali os scripts do Pixel e da Utmify (os mesmos da página atual).
+   Sem isso, as vendas não são rastreadas nos anúncios.
+
+2. Link do checkout
+   Os botões de compra levam para:
+     https://pay.wiapy.com/TSHXIRyJlIll
+   Se a pessoa chega por anúncio com UTMs, a página repassa essas UTMs ao checkout
+   automaticamente. Se o link do produto mudar, troque em todos os lugares do
+   index.html onde aparece "pay.wiapy.com/TSHXIRyJlIll".
+
+DEPOIS DE PUBLICAR, CONFERIR
+- Abrir no celular: imagens carregando, contagem regressiva rodando,
+  botões verdes pulsando e barra fixa de compra aparecendo ao rolar.
+- Clicar em um botão de compra e ver se abre o checkout da Wiapy.
+- No Gerenciador de Eventos da Meta, ver se o Pixel registra a visita.
+
+OBSERVAÇÕES
+- As páginas do guia mostradas no carrossel são amostras protegidas
+  (marca d'água, receitas desfocadas e resolução reduzida). Não troque
+  pelas páginas originais do PDF.
+- Fontes vêm do Google Fonts (Playfair Display e DM Sans), carregadas pela internet.
