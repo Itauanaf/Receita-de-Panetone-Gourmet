@@ -1495,8 +1495,8 @@
         <p class="sub">Mesmo que você nunca tenha feito panetone. Uma <b>massa simples, sem pré-fermento</b>, com fotos
           que mostram o <b>ponto certo de cada etapa</b>, e <b>5 sabores gourmet</b> prontos para o seu cardápio.</p>
         <div class="cta">
-          <a class="btn pulsa js-checkout"
-            href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">Quero
+          <a class="btn pulsa"
+            href="#oferta">Quero
             meu guia por R$ 14,90
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
               stroke-linecap="round" stroke-linejoin="round">
@@ -1572,8 +1572,8 @@
         <div class="reveal"><b>Ponto do forno</b><span>170 °C e 93–95 °C no centro com termômetro. Sem panetone cru nem
             seco.</span></div>
       </div>
-      <div class="cta"><a class="btn js-checkout"
-          href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">Quero
+      <div class="cta"><a class="btn"
+          href="#oferta">Quero
           aprender com fotos por R$ 14,90</a></div>
     </div>
   </section>
@@ -1727,8 +1727,8 @@
           </div>
         </div>
       </div>
-      <div class="cta"><a class="btn js-checkout"
-          href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">Quero
+      <div class="cta"><a class="btn"
+          href="#oferta">Quero
           o guia completo</a></div>
     </div>
   </section>
@@ -1845,8 +1845,8 @@
       </div>
       <p class="aviso">Valores do exemplo didático do guia. Os seus custos e preços dependem da sua região, dos
         ingredientes e do tamanho do produto. Não é promessa de ganho.</p>
-      <div class="cta"><a class="btn js-checkout"
-          href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">Quero
+      <div class="cta"><a class="btn"
+          href="#oferta">Quero
           aprender a calcular meu preço</a></div>
     </div>
   </section>
@@ -1954,8 +1954,7 @@
           <div class="obs">Pagamento único · sem mensalidade</div>
         </div>
         <a class="btn js-checkout" id="comprar"
-          href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">QUERO
-          MEU GUIA AGORA
+          href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">COMPRAR AGORA
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M13 6l6 6-6 6" />
@@ -2048,8 +2047,8 @@
       <h2>Quem testa a receita esta semana <em>vende na próxima.</em></h2>
       <p>As encomendas de panetone começam bem antes do Natal. Com o guia, você faz o primeiro teste, ajusta, fotografa
         e já abre o seu cardápio.</p>
-      <div class="cta"><a class="btn js-checkout"
-          href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">Quero
+      <div class="cta"><a class="btn"
+          href="#oferta">Quero
           começar hoje por R$ 14,90</a>
         <div class="micro" style="color:#cdb9a0"><span>Acesso imediato</span><span>Garantia de 7 dias</span></div>
       </div>
@@ -2106,6 +2105,27 @@
       document.getElementById('ant').onclick = function () { ir(atual() - 1) };
       document.getElementById('prox').onclick = function () { ir(atual() + 1) };
       t.addEventListener('scroll', function () { pos.textContent = (atual() + 1) + ' de ' + items.length }, { passive: true });
+    })();
+    // botões que levam ao card da oferta
+    // as imagens "lazy" carregam durante a rolagem e empurram a oferta para baixo,
+    // então carregamos todas e corrigimos a posição até parar exatamente no card
+    (function () {
+      var of = document.getElementById('oferta');
+      function ir() {
+        document.querySelectorAll('img[loading="lazy"]').forEach(function (img) { img.loading = 'eager' });
+        of.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var ultimoY = -1, inicio = Date.now();
+        var iv = setInterval(function () {
+          var parado = Math.abs(scrollY - ultimoY) < 2; ultimoY = scrollY;
+          if (!parado) return;
+          if (Math.abs(of.getBoundingClientRect().top) > 4) of.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          else clearInterval(iv);
+          if (Date.now() - inicio > 5000) clearInterval(iv);
+        }, 250);
+      }
+      document.querySelectorAll('a[href="#oferta"]').forEach(function (a) {
+        a.addEventListener('click', function (e) { e.preventDefault(); ir() });
+      });
     })();
     // animação ao rolar
     (function () {
