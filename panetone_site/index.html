@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Panetone Gourmet Fácil — Guia ilustrado para iniciantes</title>
   <meta name="description"
-    content="Faça panetones gourmet que dão certo de primeira e abra suas encomendas de Natal. Guia ilustrado com massa simples, 5 sabores gourmet, custos e preço.">
+    content="Aprenda a preparar panetones gourmet e organizar suas primeiras encomendas. Guia digital de 41 páginas com massa ilustrada, 5 sabores, custos e bônus de etiquetas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -1022,61 +1022,61 @@
     }
 
     .box {
-      background: var(--papel);
+      background: #fff;
       color: var(--texto);
       border-radius: 24px;
       max-width: 560px;
       margin: 0 auto;
-      padding: 40px 22px 30px;
+      padding: 28px 22px 30px;
       box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .6);
       position: relative
     }
 
-    .box:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 16px;
-      border-radius: 24px 24px 0 0;
-      background: linear-gradient(#d9b56a 0 2px, #b3162c 2px 14px, #d9b56a 14px 16px)
-    }
-
-    .box .laco {
-      position: absolute;
-      top: -34px;
-      left: 10px;
-      width: 96px;
-      transform: rotate(-14deg);
-      z-index: 3;
-      pointer-events: none;
-      filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .35))
-    }
-
-    .box .topo {
-      text-align: center;
-      border-bottom: 1px solid var(--linha);
-      padding-bottom: 18px;
-      margin-bottom: 12px
-    }
-
-    .box .topo img {
+    .oferta-preview {
       position: relative;
-      z-index: 2;
-      width: 120px;
-      margin: -70px auto 12px;
-      border-radius: 6px;
-      box-shadow: 0 14px 30px -10px rgba(0, 0, 0, .5)
+      width: min(100%, 400px);
+      aspect-ratio: 400 / 292;
+      margin: 0 auto 28px;
+      isolation: isolate
     }
 
-    .box .topo h3 {
-      font-size: 26px
+    .oferta-preview img {
+      position: absolute;
+      width: 40%;
+      height: 80%;
+      top: 10%;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(46, 26, 16, .25)
     }
 
-    .box .topo p {
-      font-size: 14px;
-      color: var(--suave)
+    .oferta-preview .pagina-esquerda {
+      left: 7%;
+      transform: rotate(-12deg)
+    }
+
+    .oferta-preview .pagina-interna-esquerda {
+      left: 16%;
+      transform: rotate(-6deg)
+    }
+
+    .oferta-preview .pagina-direita {
+      right: 7%;
+      transform: rotate(12deg)
+    }
+
+    .oferta-preview .pagina-interna-direita {
+      right: 16%;
+      transform: rotate(6deg)
+    }
+
+    .oferta-preview .capa-oferta {
+      width: 48%;
+      height: 94%;
+      top: 0;
+      left: 26%;
+      z-index: 1;
+      object-fit: fill;
+      box-shadow: 0 4px 9px rgba(46, 26, 16, .3)
     }
 
     .box ul {
@@ -1085,11 +1085,11 @@
 
     .box li {
       display: flex;
-      gap: 10px;
-      padding: 9px 0;
-      border-bottom: 1px solid #f1e8da;
-      font-size: 15.5px;
-      line-height: 1.4
+      gap: 12px;
+      padding: 7px 0;
+      color: #241b17;
+      font-size: 16px;
+      line-height: 1.5
     }
 
     .box li:before {
@@ -1099,22 +1099,11 @@
       flex: none
     }
 
-    .box li.bonus {
-      background: #fff6e2;
-      margin: 6px -10px;
-      padding: 10px;
-      border-radius: 10px;
-      border: 0
-    }
-
-    .box li.bonus:before {
-      content: "★";
-      color: var(--ouro)
-    }
-
     .preco {
       text-align: center;
-      margin: 22px 0 4px
+      margin: 24px 0 4px;
+      padding-top: 24px;
+      border-top: 1px solid var(--linha)
     }
 
     .preco .de {
@@ -1492,8 +1481,9 @@
         <h1>Faça panetones gourmet que <em>dão certo de primeira</em> e abra suas encomendas de Natal.</h1>
       </div>
       <div class="t2">
-        <p class="sub">Mesmo que você nunca tenha feito panetone. Uma <b>massa simples, sem pré-fermento</b>, com fotos
-          que mostram o <b>ponto certo de cada etapa</b>, e <b>5 sabores gourmet</b> prontos para o seu cardápio.</p>
+        <p class="sub">Mesmo sem experiência: um <b>guia digital de 41 páginas</b>, com fotos do preparo da massa,
+          <b>5 sabores gourmet</b> e orientações para calcular preços e organizar encomendas.
+          Você recebe <b>2 PDFs: o guia e 8 etiquetas para imprimir.</b></p>
         <div class="cta">
           <a class="btn pulsa"
             href="#oferta">Quero
@@ -1502,11 +1492,11 @@
               stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg></a>
-          <div class="micro"><span>Pagamento único</span><span>Acesso imediato no e-mail</span><span>Garantia de 7
+          <div class="micro"><span>Pagamento único</span><span>PDFs no e-mail após a confirmação</span><span>Garantia de 7
               dias</span></div>
         </div>
         <div class="numeros">
-          <div><b>39</b>páginas ilustradas</div>
+          <div><b>41</b>páginas ilustradas</div>
           <div><b>5</b>sabores gourmet</div>
           <div><b>4</b>recheios cremosos</div>
           <div><b>4</b>módulos do zero à venda</div>
@@ -1535,20 +1525,19 @@
       <p class="lead">E quase nunca é falta de talento.</p>
       <div class="dores reveal">
         <div class="dor"><i>!</i>
-          <div>A massa <b>não cresce</b> ou fica <b>pesada e compacta</b>.</div>
+          <div>A massa <b>não cresce</b> ou fica pesada.</div>
         </div>
         <div class="dor"><i>!</i>
-          <div>Sai do forno bonito e <b>afunda</b>, ou fica <b>seco por dentro</b>.</div>
+          <div>O panetone <b>afunda</b> ou fica seco.</div>
         </div>
         <div class="dor"><i>!</i>
-          <div>O recheio <b>escorre</b> na hora de cortar e estraga a apresentação.</div>
+          <div>O recheio <b>escorre</b> no corte.</div>
         </div>
         <div class="dor"><i>!</i>
-          <div>Você cobra <b>no chute</b> e não sabe se está tendo lucro ou pagando para trabalhar.</div>
+          <div>Você cobra <b>no chute</b>, sem conhecer o custo.</div>
         </div>
       </div>
-      <p class="virada reveal">A receita da internet diz "deixe crescer até dobrar". <em>Mas ninguém te mostra como a
-          massa tem que estar.</em></p>
+      <p class="virada reveal">Reconhecer o ponto da massa <em>ajuda a entender o que ajustar.</em></p>
     </div>
   </section>
 
@@ -1557,7 +1546,7 @@
     <div class="wrap">
       <p class="eyebrow">O diferencial deste guia</p>
       <h2>Você compara a sua massa com a foto <em>e sabe se está no ponto.</em></h2>
-      <p class="lead">Cada etapa importante tem foto de referência. Nada de adivinhar.</p>
+      <p class="lead">Fotos de referência ajudam a reconhecer o ponto da sova, da fermentação e do forno.</p>
       <figure class="reveal">
         <img src="img/fermentacao.jpg"
           alt="Três fotos comparando massa pouco fermentada, massa no ponto e massa excessivamente fermentada"
@@ -1646,30 +1635,65 @@
     <div class="wrap">
       <p class="eyebrow">Menos é mais</p>
       <h2>Você não precisa de 100 receitas. <em>Precisa de uma que dá certo.</em></h2>
-      <p class="lead">Quem está começando trava com excesso de opção. O guia te leva por um caminho só, do primeiro
-        ingrediente até a entrega.</p>
+      <p class="lead">Um caminho organizado, do primeiro ingrediente à entrega.</p>
       <div class="vs">
         <div class="col ruim reveal">
           <h3>Tentando sozinha</h3>
           <ul>
-            <li>Receitas soltas, cada uma de um jeito</li>
-            <li>"Deixe crescer até dobrar", sem mostrar como fica</li>
-            <li>Deu errado e você não sabe o porquê</li>
-            <li>Recheio que escorre e panetone que desmonta</li>
-            <li>Preço no chute</li>
+            <li>Receitas e dicas espalhadas</li>
+            <li>Quantidades e montagem sem padrão</li>
+            <li>Produção e pedidos sem organização</li>
           </ul>
         </div>
         <div class="col bom reveal">
           <h3>Com o guia</h3>
           <ul>
-            <li>Uma massa-base testada, explicada do começo ao fim</li>
-            <li>Fotos do ponto da sova, da fermentação e do forno</li>
-            <li>Diagnóstico dos 4 erros mais comuns, com correção</li>
-            <li>Recheio pesado, cavidade certa, montagem em 5 passos</li>
-            <li>Custo por unidade e preço de venda calculados</li>
+            <li>Receitas reunidas em uma sequência</li>
+            <li>Pesos e orientações para padronizar a montagem</li>
+            <li>Fichas e checklists para organizar a produção</li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- POR DENTRO -->
+  <section class="alt" id="por-dentro">
+    <div class="wrap">
+      <p class="eyebrow">Veja por dentro</p>
+      <h2>Páginas reais, <em>do jeito que você vai receber.</em></h2>
+      <p class="lead">Veja páginas reais do preparo, dos checklists, dos custos e das encomendas,
+        além da folha de etiquetas. O guia combina fotos, ilustrações, tabelas e orientações escritas.</p>
+    </div>
+    <div class="car">
+      <div class="trilho" id="trilho">
+        <div class="pg"><img src="img/am-sumario.jpg" alt="Sumário do guia (amostra)" loading="lazy" draggable="false">
+        </div>
+        <div class="pg"><img src="img/am-custos.jpg" alt="Página real: exemplo de custo completo por panetone" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-encomendas.jpg" alt="Página real: divulgação e ficha para registrar encomendas" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-massa.jpg" alt="Página: passo a passo da massa (amostra)" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-forno.jpg" alt="Página: como assar sem ressecar (amostra)" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-chocotone.jpg" alt="Página: chocotone (amostra)" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-erros.jpg" alt="Página: erros comuns (amostra)" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-checklist.jpg" alt="Página: checklist da primeira fornada (amostra)"
+            loading="lazy" draggable="false"></div>
+        <div class="pg"><img src="img/am-mod2.jpg" alt="Página: módulo de recheios e sabores (amostra)" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-ganache.jpg" alt="Página: ganache de chocolate (amostra)" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-brigadeiro.jpg" alt="Página: brigadeiro para rechear (amostra)" loading="lazy"
+            draggable="false"></div>
+        <div class="pg"><img src="img/am-etiquetas.png" alt="Folha real do bônus com 8 etiquetas para imprimir, recortar e preencher" loading="lazy"
+            draggable="false"></div>
+      </div>
+      <div class="setas"><button id="ant" aria-label="Anterior">←</button><span id="pos">1 de 12</span><button id="prox"
+          aria-label="Próxima">→</button></div>
     </div>
   </section>
 
@@ -1701,7 +1725,7 @@
               <li>Como rechear sem desmontar o panetone</li>
               <li>3 sabores gourmet: chocolate, leite em pó e doce de leite</li>
               <li>Receitas extras de caramelo com nozes e pistache no próprio guia</li>
-              <li>Ficha de padronização de cada unidade</li>
+              <li>Ficha para registrar pesos e repetir a montagem de cada unidade</li>
             </ul>
           </div>
         </div>
@@ -1712,7 +1736,7 @@
               <li>3 coberturas e decoração natalina</li>
               <li>Embalagens para presente e venda</li>
               <li>O que colocar na etiqueta e como preencher as informações do produto</li>
-              <li>Conservação, transporte e entrega</li>
+              <li>Conservação, transporte e checklist antes da entrega</li>
             </ul>
           </div>
         </div>
@@ -1722,7 +1746,7 @@
             <ul>
               <li>Custo de cada ingrediente e da unidade</li>
               <li>Como formar o preço com margem</li>
-              <li>Divulgação dos seus panetones</li>
+              <li>Divulgação e ficha para organizar suas encomendas</li>
               <li>Plano de produção em 7 etapas</li>
             </ul>
           </div>
@@ -1734,44 +1758,7 @@
     </div>
   </section>
 
-  <!-- POR DENTRO -->
-  <section class="alt" id="por-dentro">
-    <div class="wrap">
-      <p class="eyebrow">Veja por dentro</p>
-      <h2>Páginas reais, <em>do jeito que você vai receber.</em></h2>
-      <p class="lead">Deslize para ver algumas páginas. As receitas completas ficam no guia.</p>
-    </div>
-    <div class="car">
-      <div class="trilho" id="trilho">
-        <div class="pg"><img src="img/am-sumario.jpg" alt="Sumário do guia (amostra)" loading="lazy" draggable="false">
-        </div>
-        <div class="pg"><img src="img/am-gourmet.jpg" alt="Página: tradicional ou gourmet (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-equip.jpg" alt="Página: equipamentos (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-massa.jpg" alt="Página: passo a passo da massa (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-forno.jpg" alt="Página: como assar sem ressecar (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-chocotone.jpg" alt="Página: chocotone (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-erros.jpg" alt="Página: erros comuns (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-checklist.jpg" alt="Página: checklist da primeira fornada (amostra)"
-            loading="lazy" draggable="false"></div>
-        <div class="pg"><img src="img/am-mod2.jpg" alt="Página: módulo de recheios e sabores (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-ganache.jpg" alt="Página: ganache de chocolate (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-brigadeiro.jpg" alt="Página: brigadeiro para rechear (amostra)" loading="lazy"
-            draggable="false"></div>
-        <div class="pg"><img src="img/am-leite.jpg" alt="Página: creme de leite em pó (amostra)" loading="lazy"
-            draggable="false"></div>
-      </div>
-      <div class="setas"><button id="ant" aria-label="Anterior">←</button><span id="pos">1 de 12</span><button id="prox"
-          aria-label="Próxima">→</button></div>
-    </div>
-  </section>
+
 
   <!-- ERROS -->
   <section>
@@ -1781,8 +1768,7 @@
       <div class="reveal">
         <p class="eyebrow">E se der errado?</p>
         <h2>O guia te diz <em>o porquê</em> e como corrigir.</h2>
-        <p>Massa pesada, rachaduras, massa seca ou panetone afundado: cada problema vem com <b>foto, causa provável e
-            correção</b>. Você não joga ingrediente fora tentando adivinhar.</p>
+        <p>Consulte as <b>causas prováveis e correções</b> dos quatro erros mais comuns e registre os ajustes da próxima fornada.</p>
         <ul class="lista-check">
           <li>Checklist antes, durante e depois da primeira fornada</li>
           <li>Quadro de sinais de atenção no forno</li>
@@ -1792,65 +1778,7 @@
     </div>
   </section>
 
-  <!-- CONTA -->
-  <section class="alt">
-    <div class="wrap">
-      <p class="eyebrow">A conta que ninguém te mostra</p>
-      <h2>Quanto custa fazer <em>e por quanto vender.</em></h2>
-      <p class="lead">O Módulo 4 te ensina a calcular tudo, até energia, embalagem e mão de obra. Veja o exemplo do
-        guia:</p>
-      <div class="conta">
-        <div class="card reveal">
-          <h3>Lote com 2 panetones de chocolate</h3>
-          <table>
-            <tr>
-              <td>Massa-base</td>
-              <td>R$ 11,00</td>
-            </tr>
-            <tr>
-              <td>Recheio de brigadeiro</td>
-              <td>R$ 18,00</td>
-            </tr>
-            <tr>
-              <td>Cobertura e decoração</td>
-              <td>R$ 10,00</td>
-            </tr>
-            <tr>
-              <td>Embalagens</td>
-              <td>R$ 8,00</td>
-            </tr>
-            <tr>
-              <td>Energia, gás e despesas</td>
-              <td>R$ 10,00</td>
-            </tr>
-            <tr>
-              <td>Mão de obra e perdas</td>
-              <td>R$ 23,00</td>
-            </tr>
-            <tr>
-              <td><b>Total do lote</b></td>
-              <td><b>R$ 80,00</b></td>
-            </tr>
-            <tr class="tot">
-              <td>Custo por panetone (÷ 2)</td>
-              <td>R$ 40,00</td>
-            </tr>
-          </table>
-        </div>
-        <div class="card big reveal">
-          <h3>Preço de referência calculado</h3>
-          <div class="v">R$ 67</div>
-          <p>por panetone, já com despesas sobre a venda e margem planejada.</p>
-          <small>O guia mostra a fórmula para você fazer com os <b>seus</b> custos.</small>
-        </div>
-      </div>
-      <p class="aviso">Valores do exemplo didático do guia. Os seus custos e preços dependem da sua região, dos
-        ingredientes e do tamanho do produto. Não é promessa de ganho.</p>
-      <div class="cta"><a class="btn"
-          href="#oferta">Quero
-          aprender a calcular meu preço</a></div>
-    </div>
-  </section>
+
 
   <!-- PÚBLICO -->
   <section>
@@ -1920,8 +1848,8 @@
           <p>Quer incluir panetone gourmet no que já vende.</p>
         </div>
       </div>
-      <p class="nao"><b>Não é para você</b> se procura técnicas de panificação profissional com fermentação natural ou
-        pré-fermento de longa duração. Este é um guia <b>simples e direto</b>, para começar.</p>
+      <p class="nao"><b>Este guia não é para você</b> se procura técnicas de panificação profissional com fermentação
+        natural ou uso de pré-fermentos de longa duração. Ele é <b>simples e direto</b>, voltado para quem está começando.</p>
     </div>
   </section>
 
@@ -1930,27 +1858,23 @@
     <div class="wrap">
       <p class="eyebrow">O que você recebe na compra</p>
       <h2>Seu guia completo <em>+ bônus de etiquetas.</em></h2>
-      <p class="lead">Da massa à primeira encomenda: receitas ilustradas, recheios, acabamento e orientações de venda,
-        com etiquetas para dar o toque final às suas embalagens.</p>
+      <p class="lead">Você recebe 2 arquivos em PDF: o guia de 41 páginas, com receitas e ferramentas para organizar
+        a produção, e uma folha com 8 etiquetas para imprimir.</p>
       <div class="box">
-        <img class="laco" src="img/laco.svg" alt="" aria-hidden="true">
-        <div class="topo"><img src="img/capa.jpg" alt="Capa do guia">
-          <h3>Receita de Panetone Gourmet Fácil</h3>
-          <p>4 módulos ilustrados · 5 sabores gourmet · etiquetas para suas embalagens</p>
+        <div class="oferta-preview">
+          <img width="560" height="792" class="pagina-esquerda" src="img/am-ganache.jpg" alt="" loading="lazy" aria-hidden="true">
+          <img width="560" height="792" class="pagina-direita" src="img/am-forno.jpg" alt="" loading="lazy" aria-hidden="true">
+          <img width="560" height="792" class="pagina-interna-esquerda" src="img/am-massa.jpg" alt="" loading="lazy" aria-hidden="true">
+          <img width="560" height="792" class="pagina-interna-direita" src="img/am-mod2.jpg" alt="" loading="lazy" aria-hidden="true">
+          <img width="900" height="1273" class="capa-oferta" src="img/capa.jpg" alt="Guia Receita de Panetone Gourmet Fácil com páginas ilustradas do passo a passo" loading="lazy">
         </div>
         <ul>
-          <li>4 módulos: começando do zero, recheios, apresentação e vendas</li>
-          <li>Massa-base simplificada + chocotone, com fotos de cada etapa</li>
-          <li>4 recheios cremosos e 3 sabores gourmet montados</li>
-          <li>3 coberturas, decoração natalina e embalagens</li>
-          <li>Etiqueta, conservação, transporte e entrega</li>
-          <li>Cálculo de custo por unidade e formação de preço</li>
-          <li>Plano de produção em 7 etapas</li>
-          <li>Checklists da primeira fornada e da entrega</li>
-          <li class="bonus"><span><b>Bônus Novos Sabores:</b> Panetone de Caramelo com Nozes e Panetone de
-              Pistache, incluídos nas 41 páginas do guia</span></li>
-          <li class="bonus"><span><b>Bônus Etiquetas para Imprimir:</b> 8 etiquetas para recortar e
-              preencher com sabor, ingredientes, alérgenos, peso líquido, lote, fabricação, validade e conservação</span></li>
+          <li>Guia completo em PDF com 41 páginas</li>
+          <li>4 módulos: preparo, recheios, apresentação e vendas</li>
+          <li>Fotos do preparo da massa e orientações de montagem</li>
+          <li>Cálculo de custos, preço de venda e fichas de produção e encomendas</li>
+          <li><span><b>Bônus Novos Sabores:</b> Panetone de Caramelo com Nozes e Panetone de Pistache, incluídos nas 41 páginas do guia</span></li>
+          <li><span><b>Bônus Etiquetas para Imprimir:</b> 8 etiquetas para recortar e preencher com sabor, ingredientes, alérgenos, peso líquido, lote, fabricação, validade e conservação</span></li>
         </ul>
         <div class="preco">
           <div class="de">De <s>R$ 49,90</s> por apenas</div>
@@ -1963,7 +1887,7 @@
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg></a>
-        <div class="seguro"><span>🔒 Compra segura</span><span>⚡ Acesso imediato no e-mail</span><span>🛡️ Garantia de 7
+        <div class="seguro"><span>🔒 Compra segura</span><span>⚡ PDFs no e-mail após a confirmação</span><span>🛡️ Garantia de 7
             dias</span></div>
       </div>
       <p class="ancora">Custa <b>menos que um panetone gourmet na loja</b> e te ensina a fazer quantos quiser.</p>
@@ -2002,8 +1926,8 @@
         </details>
         <details>
           <summary>Nunca fiz panetone. Vou conseguir?</summary>
-          <p>O guia foi feito para iniciantes. Cada etapa tem foto de referência (sova, fermentação, forno) e um
-            capítulo só de erros comuns com correção. A recomendação é fazer uma fornada de teste antes de aceitar
+          <p>O guia foi feito para iniciantes. O preparo da massa tem fotos de referência de sova, fermentação e forno,
+            além de orientações para corrigir erros comuns. A recomendação é fazer uma fornada de teste antes de aceitar
             encomendas.</p>
         </details>
         <details>
@@ -2018,14 +1942,14 @@
         </details>
         <details>
           <summary>O produto é físico ou digital?</summary>
-          <p>É um material digital: um guia com 4 módulos e 41 páginas ilustradas, incluindo as receitas extras de
-            caramelo com nozes e pistache, além do bônus com 8 etiquetas para suas embalagens.
-            O material é entregue em PDF para você consultar no celular, no computador ou imprimir.
-            Não há envio de produto físico.</p>
+          <p>Você recebe 2 arquivos digitais em PDF: o guia de 41 páginas, organizado em 4 módulos e com as receitas
+            de caramelo com nozes e pistache já incluídas, e uma folha separada com 8 etiquetas.
+            Você pode consultar o guia no celular ou no computador e imprimir o material. Não há envio de produto físico.</p>
         </details>
         <details>
           <summary>Como é o bônus de etiquetas?</summary>
-          <p>Você recebe uma folha com 8 etiquetas para imprimir, recortar e preencher. Cada etiqueta tem campos para
+          <p>Você recebe um PDF separado com uma folha de 8 etiquetas para imprimir, recortar e preencher à mão.
+            Basta imprimir a folha e completar os campos de
             sabor, ingredientes, alérgenos, peso líquido, lote, fabricação, validade e conservação.</p>
         </details>
         <details>
@@ -2055,16 +1979,16 @@
   <section class="final">
     <div class="wrap">
       <p class="eyebrow">Faltam <span id="cd2">poucos</span> dias</p>
-      <h2>Quem testa a receita esta semana <em>vende na próxima.</em></h2>
-      <p>As encomendas de panetone começam bem antes do Natal. Com o guia, você faz o primeiro teste, ajusta, fotografa
-        e já abre o seu cardápio.</p>
+      <h2>Comece sua primeira fornada e <em>prepare seu cardápio de Natal.</em></h2>
+      <p>Use o guia para fazer uma fornada de teste, registrar os ajustes e calcular seus preços.
+        Depois, organize seu cardápio e as primeiras encomendas.</p>
       <div class="cta"><a class="btn"
           href="#oferta">Quero
           começar hoje por R$ 14,90</a>
         <div class="micro" style="color:#cdb9a0"><span>Acesso imediato</span><span>Garantia de 7 dias</span></div>
       </div>
-      <div class="ps"><b>P.S.</b> Você não precisa de 100 receitas para vender no Natal. Precisa de <b>uma massa que dá
-          certo</b>, alguns sabores bem feitos e saber o seu preço. É exatamente isso que está no guia, por menos que um
+      <div class="ps"><b>P.S.</b> Você não precisa de 100 receitas para começar. Precisa de <b>uma base para praticar</b>,
+        sabores para montar seu cardápio e ferramentas para calcular preços e organizar pedidos. É isso que está no guia, por menos que um
         panetone de loja.</div>
     </div>
   </section>
