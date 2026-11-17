@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Panetone Gourmet Fácil — Guia ilustrado para iniciantes</title>
   <meta name="description"
-    content="Aprenda a preparar panetones gourmet e organizar suas primeiras encomendas. Guia digital de 41 páginas com massa ilustrada, 5 sabores, custos e bônus de etiquetas.">
+    content="Aprenda a preparar panetones gourmet e organizar suas primeiras encomendas. Guia digital de 41 páginas com 5 sabores, bônus de etiquetas e receitas de rabanada recheada.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -60,6 +60,11 @@
 
     a {
       color: inherit
+    }
+
+    a:focus-visible, button:focus-visible, summary:focus-visible, .trilho:focus-visible {
+      outline: 3px solid #b47a17;
+      outline-offset: 4px
     }
 
     .wrap {
@@ -148,8 +153,7 @@
       color: #f7e7c6;
       text-align: center;
       font-size: 12.5px;
-      white-space: nowrap;
-      overflow: hidden;
+      line-height: 1.45;
       padding: 9px 12px;
       letter-spacing: .02em
     }
@@ -188,9 +192,7 @@
       flex: none
     }
 
-    .btn {
-      animation: pulsa 1.8s ease-in-out infinite
-    }
+    .btn { animation: none }
 
     @keyframes pulsa {
       0% {
@@ -298,7 +300,8 @@
 
     .mock {
       position: relative;
-      height: clamp(300px, 80vw, 470px);
+      width: 100%;
+      aspect-ratio: 1 / .96;
       margin: 0 auto;
       max-width: 500px
     }
@@ -316,7 +319,7 @@
 
     .mock .bg {
       position: absolute;
-      inset: 8% 2% 0;
+      inset: 8% 0 2%;
       border-radius: 28px;
       background: linear-gradient(160deg, var(--vinho) 0%, var(--vinho-esc) 100%);
       overflow: hidden
@@ -336,30 +339,56 @@
       width: 47%
     }
 
-    .mock .p1 {
-      left: 4%;
-      top: 16%;
-      transform: rotate(-8deg)
+    .mock .mockup-principal {
+      top: 15%;
+      width: 86%;
+      left: 7%;
+      height: auto;
+      border-radius: 0;
+      box-shadow: none;
+      filter: drop-shadow(0 18px 18px rgba(0, 0, 0, .3));
+      z-index: 2
+    }
+
+    @media (max-width: 759px) {
+      .hero .mock {
+        max-width: 420px;
+        aspect-ratio: 1 / .9
+      }
+
+      .hero .mock .bg {
+        inset: 3% 0;
+        border-radius: 24px
+      }
+
+      .hero .mock .mockup-principal {
+        top: 50%;
+        left: 4%;
+        width: 92%;
+        transform: translateY(-50%)
+      }
     }
 
     .mock .p3 {
       right: 4%;
-      top: 16%;
-      transform: rotate(8deg)
+      top: 28%;
+      width: 38%;
+      transform: rotate(3deg);
+      z-index: 2
     }
 
     .mock .p2 {
-      left: 50%;
-      top: 2%;
-      transform: translateX(-50%);
-      width: 54%;
+      left: 5%;
+      top: 7%;
+      transform: rotate(-3deg);
+      width: 53%;
       z-index: 2
     }
 
     .selo {
       position: absolute;
       z-index: 3;
-      right: 2%;
+      left: 2%;
       bottom: 4%;
       width: 108px;
       height: 108px;
@@ -771,7 +800,7 @@
       gap: 16px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding: 6px 20px 24px;
+      padding: 6px max(20px, calc((100% - min(72vw, 330px)) / 2)) 24px;
       scrollbar-width: none
     }
 
@@ -1033,50 +1062,35 @@
     }
 
     .oferta-preview {
-      position: relative;
-      width: min(100%, 400px);
-      aspect-ratio: 400 / 292;
-      margin: 0 auto 28px;
-      isolation: isolate
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 4vw, 22px);
+      width: 100%;
+      margin: 0 auto 16px;
+      padding: 4px 0
     }
 
     .oferta-preview img {
-      position: absolute;
-      width: 40%;
-      height: 80%;
-      top: 10%;
-      object-fit: cover;
-      box-shadow: 0 3px 8px rgba(46, 26, 16, .25)
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      filter: drop-shadow(0 7px 9px rgba(46, 26, 16, .2))
     }
 
-    .oferta-preview .pagina-esquerda {
-      left: 7%;
-      transform: rotate(-12deg)
+    .bonus-oferta {
+      margin-top: 12px;
+      padding: 14px 16px 10px;
+      border: 1px solid var(--ouro-claro);
+      border-radius: 14px;
+      background: var(--creme)
     }
 
-    .oferta-preview .pagina-interna-esquerda {
-      left: 16%;
-      transform: rotate(-6deg)
-    }
-
-    .oferta-preview .pagina-direita {
-      right: 7%;
-      transform: rotate(12deg)
-    }
-
-    .oferta-preview .pagina-interna-direita {
-      right: 16%;
-      transform: rotate(6deg)
-    }
-
-    .oferta-preview .capa-oferta {
-      width: 48%;
-      height: 94%;
-      top: 0;
-      left: 26%;
-      z-index: 1;
-      object-fit: fill;
-      box-shadow: 0 4px 9px rgba(46, 26, 16, .3)
+    .bonus-oferta h3 {
+      color: var(--vinho);
+      font-size: 22px;
+      margin-bottom: 6px
     }
 
     .box ul {
@@ -1304,11 +1318,15 @@
       align-items: center;
       gap: 12px;
       transform: translateY(110%);
+      visibility: hidden;
+      pointer-events: none;
       transition: transform .3s
     }
 
     .fixo.on {
-      transform: none
+      transform: none;
+      visibility: visible;
+      pointer-events: auto
     }
 
     .fixo .p {
@@ -1332,24 +1350,7 @@
       animation: none
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .6s, transform .6s
-    }
-
-    .reveal.vis {
-      opacity: 1;
-      transform: none
-    }
-
     @media (prefers-reduced-motion:reduce) {
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none
-      }
-
       .btn {
         animation: none
       }
@@ -1390,9 +1391,12 @@
       }
 
       .hero .mock {
-        height: 560px;
         max-width: 580px;
         margin-right: -20px
+      }
+
+      .hero .chips {
+        justify-content: flex-start
       }
 
       .hero .eyebrow {
@@ -1483,11 +1487,11 @@
       <div class="t2">
         <p class="sub">Mesmo sem experiência: um <b>guia digital de 41 páginas</b>, com fotos do preparo da massa,
           <b>5 sabores gourmet</b> e orientações para calcular preços e organizar encomendas.
-          Você recebe <b>2 PDFs: o guia e 8 etiquetas para imprimir.</b></p>
+          Você também recebe <b>8 etiquetas para imprimir e o bônus de receitas de rabanada recheada.</b></p>
         <div class="cta">
           <a class="btn pulsa"
             href="#oferta">Quero
-            meu guia por R$ 14,90
+            meu guia por R$ 19,99
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
               stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
@@ -1503,14 +1507,9 @@
         </div>
       </div>
       <div class="hv">
-        <div class="mock" aria-label="Páginas do guia Receita de Panetone Gourmet Fácil">
+        <div class="mock" aria-label="Guia Receita de Panetone Gourmet Fácil e bônus Receitas de Rabanada Recheada">
           <div class="bg"></div>
-          <img class="p1" src="img/am-massa.jpg" alt="Página do passo a passo da massa">
-          <img class="p3" src="img/am-mod2.jpg" alt="Página do módulo de recheios e sabores gourmet">
-          <img class="p2" src="img/capa.jpg" alt="Capa do guia Receita de Panetone Gourmet Fácil">
-          <div class="selo">
-            <div><b>5</b>sabores<br>gourmet</div>
-          </div>
+          <img class="mockup-principal" src="img/Dois livros com fundo transparente.png" width="1300" height="1190" alt="Guia Receita de Panetone Gourmet Fácil e bônus Receitas de Rabanada Recheada">
         </div>
       </div>
     </div>
@@ -1563,7 +1562,7 @@
       </div>
       <div class="cta"><a class="btn"
           href="#oferta">Quero
-          aprender com fotos por R$ 14,90</a></div>
+          aprender com fotos por R$ 19,99</a></div>
     </div>
   </section>
 
@@ -1666,7 +1665,7 @@
         além da folha de etiquetas. O guia combina fotos, ilustrações, tabelas e orientações escritas.</p>
     </div>
     <div class="car">
-      <div class="trilho" id="trilho">
+      <div class="trilho" id="trilho" tabindex="0" role="region" aria-label="Amostras das páginas do guia">
         <div class="pg"><img src="img/am-sumario.jpg" alt="Sumário do guia (amostra)" loading="lazy" draggable="false">
         </div>
         <div class="pg"><img src="img/am-custos.jpg" alt="Página real: exemplo de custo completo por panetone" loading="lazy"
@@ -1692,8 +1691,8 @@
         <div class="pg"><img src="img/am-etiquetas.png" alt="Folha real do bônus com 8 etiquetas para imprimir, recortar e preencher" loading="lazy"
             draggable="false"></div>
       </div>
-      <div class="setas"><button id="ant" aria-label="Anterior">←</button><span id="pos">1 de 12</span><button id="prox"
-          aria-label="Próxima">→</button></div>
+      <div class="setas"><button type="button" id="ant" aria-label="Página anterior" aria-controls="trilho">←</button><span id="pos" aria-live="polite">1 de 12</span><button type="button" id="prox"
+          aria-label="Próxima página" aria-controls="trilho">→</button></div>
     </div>
   </section>
 
@@ -1857,28 +1856,28 @@
   <section class="oferta" id="oferta">
     <div class="wrap">
       <p class="eyebrow">O que você recebe na compra</p>
-      <h2>Seu guia completo <em>+ bônus de etiquetas.</em></h2>
-      <p class="lead">Você recebe 2 arquivos em PDF: o guia de 41 páginas, com receitas e ferramentas para organizar
-        a produção, e uma folha com 8 etiquetas para imprimir.</p>
+      <h2>Seu guia completo <em>+ bônus especiais.</em></h2>
+      <p class="lead">Tudo para preparar seus panetones e começar suas encomendas.</p>
       <div class="box">
         <div class="oferta-preview">
-          <img width="560" height="792" class="pagina-esquerda" src="img/am-ganache.jpg" alt="" loading="lazy" aria-hidden="true">
-          <img width="560" height="792" class="pagina-direita" src="img/am-forno.jpg" alt="" loading="lazy" aria-hidden="true">
-          <img width="560" height="792" class="pagina-interna-esquerda" src="img/am-massa.jpg" alt="" loading="lazy" aria-hidden="true">
-          <img width="560" height="792" class="pagina-interna-direita" src="img/am-mod2.jpg" alt="" loading="lazy" aria-hidden="true">
-          <img width="900" height="1273" class="capa-oferta" src="img/capa.jpg" alt="Guia Receita de Panetone Gourmet Fácil com páginas ilustradas do passo a passo" loading="lazy">
+          <img width="1300" height="1190" src="img/Dois livros com fundo transparente.png" alt="Guia Receita de Panetone Gourmet Fácil e bônus Receitas de Rabanada Recheada" loading="lazy">
         </div>
         <ul>
-          <li>Guia completo em PDF com 41 páginas</li>
-          <li>4 módulos: preparo, recheios, apresentação e vendas</li>
-          <li>Fotos do preparo da massa e orientações de montagem</li>
-          <li>Cálculo de custos, preço de venda e fichas de produção e encomendas</li>
-          <li><span><b>Bônus Novos Sabores:</b> Panetone de Caramelo com Nozes e Panetone de Pistache, incluídos nas 41 páginas do guia</span></li>
-          <li><span><b>Bônus Etiquetas para Imprimir:</b> 8 etiquetas para recortar e preencher com sabor, ingredientes, alérgenos, peso líquido, lote, fabricação, validade e conservação</span></li>
+          <li>Guia ilustrado de 41 páginas, com 4 módulos</li>
+          <li>Receitas, recheios e orientações de preparo</li>
+          <li>Sabores caramelo com nozes e pistache incluídos no guia</li>
+          <li>Custos, preços e organização de encomendas</li>
         </ul>
+        <div class="bonus-oferta">
+          <h3>Seus bônus inclusos</h3>
+          <ul>
+            <li>8 etiquetas para imprimir</li>
+            <li>Receitas de rabanada recheada</li>
+          </ul>
+        </div>
         <div class="preco">
           <div class="de">De <s>R$ 49,90</s> por apenas</div>
-          <div class="por"><small>R$</small>14,90</div>
+          <div class="por"><small>R$</small>19,99</div>
           <div class="obs">Pagamento único · sem mensalidade</div>
         </div>
         <a class="btn js-checkout" id="comprar"
@@ -1942,8 +1941,8 @@
         </details>
         <details>
           <summary>O produto é físico ou digital?</summary>
-          <p>Você recebe 2 arquivos digitais em PDF: o guia de 41 páginas, organizado em 4 módulos e com as receitas
-            de caramelo com nozes e pistache já incluídas, e uma folha separada com 8 etiquetas.
+          <p>Você recebe 3 arquivos digitais em PDF: o guia de 41 páginas, organizado em 4 módulos e com as receitas
+            de caramelo com nozes e pistache já incluídas, uma folha com 8 etiquetas e o bônus de receitas de rabanada recheada.
             Você pode consultar o guia no celular ou no computador e imprimir o material. Não há envio de produto físico.</p>
         </details>
         <details>
@@ -1984,7 +1983,7 @@
         Depois, organize seu cardápio e as primeiras encomendas.</p>
       <div class="cta"><a class="btn"
           href="#oferta">Quero
-          começar hoje por R$ 14,90</a>
+          começar hoje por R$ 19,99</a>
         <div class="micro" style="color:#cdb9a0"><span>Acesso imediato</span><span>Garantia de 7 dias</span></div>
       </div>
       <div class="ps"><b>P.S.</b> Você não precisa de 100 receitas para começar. Precisa de <b>uma base para praticar</b>,
@@ -2000,16 +1999,17 @@
   </footer>
 
   <div class="fixo" id="fixo">
-    <div class="p">Guia completo<b>R$ 14,90</b></div><a class="btn" href="#oferta">Quero meu guia</a>
+    <div class="p">Guia completo<b>R$ 19,99</b></div><a class="btn" href="#oferta">Quero meu guia</a>
   </div>
 
 
   <script>
     // contagem até o Natal
     (function () {
-      var alvo = new Date(new Date().getFullYear(), 11, 25);
       function tick() {
-        var d = alvo - new Date(); if (d < 0) d = 0;
+        var agora = new Date(), alvo = new Date(agora.getFullYear(), 11, 25);
+        if (agora >= new Date(agora.getFullYear(), 11, 26)) alvo = new Date(agora.getFullYear() + 1, 11, 25);
+        var d = Math.max(0, alvo - agora);
         var dias = Math.floor(d / 864e5), h = Math.floor(d / 36e5) % 24, m = Math.floor(d / 6e4) % 60, s = Math.floor(d / 1e3) % 60;
         var p = function (n) { return String(n).padStart(2, '0') };
         document.getElementById('cd').textContent = dias + 'd ' + p(h) + 'h ' + p(m) + 'm ' + p(s) + 's';
@@ -2036,38 +2036,11 @@
         var c = t.scrollLeft + t.clientWidth / 2, best = 0, bd = 1e9;
         for (var i = 0; i < items.length; i++) { var it = items[i], m = it.offsetLeft + it.offsetWidth / 2, dd = Math.abs(m - c); if (dd < bd) { bd = dd; best = i } } return best
       }
-      function ir(i) { i = Math.max(0, Math.min(items.length - 1, i)); var it = items[i]; t.scrollTo({ left: it.offsetLeft - (t.clientWidth - it.offsetWidth) / 2, behavior: 'smooth' }) }
+      function ir(i) { i = Math.max(0, Math.min(items.length - 1, i)); var it = items[i]; t.scrollTo({ left: it.offsetLeft - (t.clientWidth - it.offsetWidth) / 2, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }) }
       document.getElementById('ant').onclick = function () { ir(atual() - 1) };
       document.getElementById('prox').onclick = function () { ir(atual() + 1) };
       t.addEventListener('scroll', function () { pos.textContent = (atual() + 1) + ' de ' + items.length }, { passive: true });
-    })();
-    // botões que levam ao card da oferta
-    // as imagens "lazy" carregam durante a rolagem e empurram a oferta para baixo,
-    // então carregamos todas e corrigimos a posição até parar exatamente no card
-    (function () {
-      var of = document.getElementById('oferta');
-      function ir() {
-        document.querySelectorAll('img[loading="lazy"]').forEach(function (img) { img.loading = 'eager' });
-        of.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        var ultimoY = -1, inicio = Date.now();
-        var iv = setInterval(function () {
-          var parado = Math.abs(scrollY - ultimoY) < 2; ultimoY = scrollY;
-          if (!parado) return;
-          if (Math.abs(of.getBoundingClientRect().top) > 4) of.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          else clearInterval(iv);
-          if (Date.now() - inicio > 5000) clearInterval(iv);
-        }, 250);
-      }
-      document.querySelectorAll('a[href="#oferta"]').forEach(function (a) {
-        a.addEventListener('click', function (e) { e.preventDefault(); ir() });
-      });
-    })();
-    // animação ao rolar
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('vis') }); return }
-      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target) } }) }, { rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e) { io.observe(e) });
+      pos.textContent = (atual() + 1) + ' de ' + items.length;
     })();
   </script>
 </body>
