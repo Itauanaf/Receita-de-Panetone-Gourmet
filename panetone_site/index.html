@@ -318,21 +318,6 @@
       }
     }
 
-    .mock .bg {
-      position: absolute;
-      inset: 8% 0 2%;
-      border-radius: 28px;
-      background: linear-gradient(160deg, var(--vinho) 0%, var(--vinho-esc) 100%);
-      overflow: hidden
-    }
-
-    .mock .bg:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 20% 15%, rgba(236, 217, 176, .35) 0 2px, transparent 3px) 0 0/38px 38px, radial-gradient(circle at 70% 60%, rgba(236, 217, 176, .25) 0 1.5px, transparent 2.5px) 0 0/52px 52px
-    }
-
     .mock img {
       position: absolute;
       border-radius: 8px;
@@ -341,13 +326,14 @@
     }
 
     .mock .mockup-principal {
-      top: 15%;
-      width: 86%;
-      left: 7%;
+      top: 50%;
+      width: 100%;
+      left: 0;
       height: auto;
+      transform: translateY(-50%);
       border-radius: 0;
       box-shadow: none;
-      filter: drop-shadow(0 18px 18px rgba(0, 0, 0, .3));
+      filter: drop-shadow(0 8px 8px rgba(46, 26, 16, .16)) drop-shadow(0 24px 20px rgba(46, 26, 16, .18));
       z-index: 2
     }
 
@@ -357,15 +343,10 @@
         aspect-ratio: 1 / .9
       }
 
-      .hero .mock .bg {
-        inset: 3% 0;
-        border-radius: 24px
-      }
-
       .hero .mock .mockup-principal {
         top: 50%;
-        left: 4%;
-        width: 92%;
+        left: 0;
+        width: 100%;
         transform: translateY(-50%)
       }
     }
@@ -1080,6 +1061,56 @@
       filter: drop-shadow(0 7px 9px rgba(46, 26, 16, .2))
     }
 
+    .hero-beneficios { max-width: 500px; margin: 20px auto 0; grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left; font-size: 15px }
+    .hero-preco { text-align: center; margin: 20px auto 0; color: var(--choc); font-size: 18px }
+    .hero-preco strong { color: var(--vinho); font-size: 1.3em; white-space: nowrap }
+    .ponto-nota { max-width: 640px; margin: 26px auto 0; text-align: center; color: #fff }
+    .video-moldura { position: relative; width: min(100%, 360px); margin: 0 auto; border: 3px solid var(--choc); border-radius: 20px; overflow: hidden; background: var(--choc); box-shadow: var(--sombra) }
+    .video-produto { display: block; width: 100%; aspect-ratio: 480 / 848; height: auto; object-fit: contain }
+    .video-som { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); z-index: 1; border: 0; border-radius: 999px; padding: 12px 20px; background: #ffc83d; color: #2e1a10; font: 700 15px/1.2 "DM Sans", sans-serif; white-space: nowrap; cursor: pointer; box-shadow: 0 5px 14px rgba(0, 0, 0, .22) }
+    .video-som[hidden] { display: none }
+    .publico-lista { max-width: 620px; margin: 28px auto 0 }
+    .publico-nota { text-align: center; margin-top: 24px; font-weight: 700 }
+    .bonus-selo { display: inline-block; padding: 6px 12px; border-radius: 6px; background: var(--pinho); color: white; font-size: 13px; letter-spacing: .06em }
+    .garantia-oferta { margin-top: 22px; padding: 18px; border: 1px solid var(--linha); border-radius: 12px; background: var(--creme); text-align: left; font-size: 14px }
+    .garantia-oferta b { color: var(--vinho); font-size: 17px }
+    .garantia-oferta p { margin-top: 6px }
+    @media (max-width: 420px) { .hero-beneficios { grid-template-columns: 1fr; gap: 6px } }
+
+    .rabanada-destaque {
+      background: var(--creme2)
+    }
+
+    .rabanada-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(30px, 6vw, 72px);
+      max-width: 880px;
+      margin: auto
+    }
+
+    .rabanada-capa {
+      width: 100%;
+      height: auto;
+      max-width: 280px;
+      margin: auto;
+      border-radius: 4px 12px 12px 4px;
+      box-shadow: 0 18px 36px -14px rgba(46, 26, 16, .4)
+    }
+
+    .rabanada-texto h2 { text-align: left; margin-bottom: 18px }
+    .rabanada-texto p { margin-bottom: 16px }
+    .rabanada-texto .lista-check { margin-top: 16px }
+    .rabanada-texto .cta { text-align: left; margin-top: 24px }
+    .rabanada-nota { color: var(--suave); font-size: 13px }
+
+    @media (max-width: 650px) {
+      .rabanada-grid { grid-template-columns: 1fr; gap: 28px }
+      .rabanada-capa { max-width: 220px }
+      .rabanada-texto .cta { text-align: center }
+    }
+
     .bonus-oferta {
       margin-top: 12px;
       padding: 14px 16px 10px;
@@ -1426,6 +1457,8 @@
         justify-content: flex-start
       }
 
+      .hero-preco { text-align: left }
+
       .sabores {
         grid-template-columns: repeat(3, 1fr)
       }
@@ -1482,34 +1515,23 @@
     <img class="ramo" src="img/ramo.svg" alt="" aria-hidden="true">
     <div class="wrap hero-grid">
       <div class="t1">
-        <p class="eyebrow">Guia ilustrado para iniciantes</p>
-        <h1>Faça panetones gourmet que <em>dão certo de primeira</em> e abra suas encomendas de Natal.</h1>
+        <p class="eyebrow">Para quem quer começar do zero</p>
+        <h1>Aprenda a fazer <em>panetones gourmet</em> fofinhos, recheados e prontos para <em>vender neste Natal</em></h1>
       </div>
       <div class="t2">
-        <p class="sub">Mesmo sem experiência: um <b>guia digital de 41 páginas</b>, com fotos do preparo da massa,
-          <b>5 sabores gourmet</b> e orientações para calcular preços e organizar encomendas.
-          Você também recebe <b>8 etiquetas para imprimir e o bônus de receitas de rabanada recheada.</b></p>
+        <p class="sub">Um passo a passo visual para acertar a massa, preparar recheios, montar seus panetones e calcular seus preços — mesmo que seja sua primeira fornada.</p>
+        <ul class="lista-check hero-beneficios">
+          <li>41 páginas ilustradas</li><li>Massa, recheios e montagem</li>
+          <li>Custos e precificação</li><li>Bônus: Receitas de Rabanada Recheada</li>
+        </ul>
+        <p class="hero-preco">Guia completo + bônus por apenas <strong>R$ 19,99</strong></p>
         <div class="cta">
-          <a class="btn pulsa"
-            href="#oferta">Quero
-            meu guia por R$ 19,99
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg></a>
-          <div class="micro"><span>Pagamento único</span><span>PDFs no e-mail após a confirmação</span><span>Garantia de 7
-              dias</span></div>
-        </div>
-        <div class="numeros">
-          <div><b>41</b>páginas ilustradas</div>
-          <div><b>5</b>sabores gourmet</div>
-          <div><b>4</b>recheios cremosos</div>
-          <div><b>4</b>módulos do zero à venda</div>
+          <a class="btn" href="#oferta">Quero meu guia por R$ 19,99</a>
+          <div class="micro"><span>Pagamento seguro</span><span>Acesso digital</span><span>Garantia de 7 dias</span></div>
         </div>
       </div>
       <div class="hv">
         <div class="mock" aria-label="Guia Receita de Panetone Gourmet Fácil e bônus Receitas de Rabanada Recheada">
-          <div class="bg"></div>
           <picture>
             <source srcset="img/mockup-panetone-rabanada.webp" type="image/webp">
             <img class="mockup-principal" src="img/Dois livros com fundo transparente.png" width="1312" height="1199" fetchpriority="high" alt="Guia Receita de Panetone Gourmet Fácil e bônus Receitas de Rabanada Recheada">
@@ -1525,7 +1547,7 @@
       <div class="azevinho" aria-hidden="true"></div>
       <p class="eyebrow">Se você já tentou</p>
       <h2>Panetone caseiro costuma dar errado <em>sempre do mesmo jeito.</em></h2>
-      <p class="lead">E quase nunca é falta de talento.</p>
+
       <div class="dores reveal">
         <div class="dor"><i>!</i>
           <div>A massa <b>não cresce</b> ou fica pesada.</div>
@@ -1534,22 +1556,39 @@
           <div>O panetone <b>afunda</b> ou fica seco.</div>
         </div>
         <div class="dor"><i>!</i>
-          <div>O recheio <b>escorre</b> no corte.</div>
+          <div>Dúvida sobre <b>o ponto certo</b> da massa.</div>
         </div>
         <div class="dor"><i>!</i>
-          <div>Você cobra <b>no chute</b>, sem conhecer o custo.</div>
+          <div>O resultado fica <b>diferente do esperado</b>.</div>
         </div>
       </div>
-      <p class="virada reveal">Reconhecer o ponto da massa <em>ajuda a entender o que ajustar.</em></p>
+      <p class="virada">O problema não é falta de talento. É não saber reconhecer o ponto certo em cada etapa.</p>
+      <p class="lead">Por isso o guia mostra referências visuais para você comparar sua massa e entender quando avançar para a próxima etapa.</p>
+      <div class="cta"><a class="btn" href="#ponto">QUERO VER O PASSO A PASSO →</a></div>
+    </div>
+  </section>
+
+  <!-- APRESENTAÇÃO -->
+  <section class="alt">
+    <div class="wrap">
+      <h2>Veja por dentro <em>exatamente o que você vai receber.</em></h2>
+      <p class="lead">Conheça o material por dentro antes de decidir.</p>
+      <div class="video-moldura">
+        <video class="video-produto" controls muted autoplay loop preload="none" playsinline aria-label="Apresentação do Panetone Gourmet Fácil" data-src="img/video-credibilidade.mp4#t=0.1">
+          Seu navegador não suporta a reprodução de vídeo.
+        </video>
+        <button class="video-som" type="button">🔊 Toque para ouvir</button>
+      </div>
+      <div class="cta"><a class="btn" href="#ponto">QUERO VER O PASSO A PASSO →</a></div>
     </div>
   </section>
 
   <!-- PONTO VISUAL -->
-  <section class="ponto">
+  <section class="ponto" id="ponto">
     <div class="wrap">
       <p class="eyebrow">O diferencial deste guia</p>
-      <h2>Você compara a sua massa com a foto <em>e sabe se está no ponto.</em></h2>
-      <p class="lead">Fotos de referência ajudam a reconhecer o ponto da sova, da fermentação e do forno.</p>
+      <h2>Não fique tentando adivinhar <em>se a massa está certa.</em></h2>
+      <p class="lead">Compare o que está fazendo com referências visuais e saiba o que observar antes de seguir para a próxima etapa.</p>
       <figure class="reveal">
         <img src="img/fermentacao.jpg"
           alt="Três fotos comparando massa pouco fermentada, massa no ponto e massa excessivamente fermentada"
@@ -1561,12 +1600,10 @@
             pronta.</span></div>
         <div class="reveal"><b>Ponto da fermentação</b><span>Pouca, no ponto ou passada. É só comparar com a sua
             forma.</span></div>
-        <div class="reveal"><b>Ponto do forno</b><span>170 °C e 93–95 °C no centro com termômetro. Sem panetone cru nem
-            seco.</span></div>
+        <div class="reveal"><b>Ponto do forno</b><span>Referências de temperatura para acompanhar o assamento com termômetro.</span></div>
       </div>
-      <div class="cta"><a class="btn"
-          href="#oferta">Quero
-          aprender com fotos por R$ 19,99</a></div>
+      <p class="ponto-nota">Você não recebe apenas uma lista de ingredientes. O guia mostra o que observar durante o processo.</p>
+      <div class="cta"><a class="btn js-checkout" href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">Quero aprender com fotos por R$ 19,99</a></div>
     </div>
   </section>
 
@@ -1575,9 +1612,8 @@
     <div class="wrap">
       <div class="azevinho" aria-hidden="true"></div>
       <p class="eyebrow">Seu cardápio de Natal</p>
-      <h2>5 sabores gourmet <em>de dar água na boca.</em></h2>
-      <p class="lead">Uma massa só, vários panetones. Você aprende a base e monta cada sabor com recheio, cobertura e
-        acabamento.</p>
+      <h2>Comece com 5 sabores gourmet para deixar seu <em>cardápio de Natal mais atraente.</em></h2>
+      <p class="lead">Você não precisa inventar combinações. Escolha um sabor, siga as quantidades e monte suas primeiras opções.</p>
       <div class="banner reveal"><img src="img/capa-foto.jpg"
           alt="Panetone gourmet de chocolate com cobertura escorrendo e recheio cremoso" loading="lazy"></div>
       <div class="sabores">
@@ -1633,40 +1669,12 @@
     </div>
   </section>
 
-  <!-- VS -->
-  <section class="alt">
-    <div class="wrap">
-      <p class="eyebrow">Menos é mais</p>
-      <h2>Você não precisa de 100 receitas. <em>Precisa de uma que dá certo.</em></h2>
-      <p class="lead">Um caminho organizado, do primeiro ingrediente à entrega.</p>
-      <div class="vs">
-        <div class="col ruim reveal">
-          <h3>Tentando sozinha</h3>
-          <ul>
-            <li>Receitas e dicas espalhadas</li>
-            <li>Quantidades e montagem sem padrão</li>
-            <li>Produção e pedidos sem organização</li>
-          </ul>
-        </div>
-        <div class="col bom reveal">
-          <h3>Com o guia</h3>
-          <ul>
-            <li>Receitas reunidas em uma sequência</li>
-            <li>Pesos e orientações para padronizar a montagem</li>
-            <li>Fichas e checklists para organizar a produção</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- POR DENTRO -->
   <section class="alt" id="por-dentro">
     <div class="wrap">
       <p class="eyebrow">Veja por dentro</p>
-      <h2>Páginas reais, <em>do jeito que você vai receber.</em></h2>
-      <p class="lead">Veja páginas reais do preparo, dos checklists, dos custos e das encomendas,
-        além da folha de etiquetas. O guia combina fotos, ilustrações, tabelas e orientações escritas.</p>
+      <h2>Veja o material <em>por dentro.</em></h2>
+      <p class="lead">Páginas reais, exatamente como você recebe após a compra: receitas, preparo da massa e custos.</p>
     </div>
     <div class="car">
       <div class="trilho" id="trilho" tabindex="0" role="region" aria-label="Amostras das páginas do guia">
@@ -1712,11 +1720,8 @@
           <div class="in"><span class="n">Módulo 1</span>
             <h3>Começando do zero</h3>
             <ul>
-              <li>Ingredientes, equipamentos simples e bancada</li>
-              <li>Massa-base passo a passo com fotos</li>
-              <li>Sova, fermentação, modelagem e forno</li>
-              <li>Chocotone com gotas de chocolate</li>
-              <li>Erros comuns, soluções e checklist</li>
+              <li>Ingredientes, equipamentos e massa-base com fotos</li>
+              <li>Sova, fermentação, forno e correção de erros</li>
             </ul>
           </div>
         </div>
@@ -1724,11 +1729,8 @@
           <div class="in"><span class="n">Módulo 2</span>
             <h3>Recheios e sabores gourmet</h3>
             <ul>
-              <li>Ganache, brigadeiro, leite em pó e doce de leite</li>
-              <li>Como rechear sem desmontar o panetone</li>
-              <li>3 sabores gourmet: chocolate, leite em pó e doce de leite</li>
-              <li>Receitas extras de caramelo com nozes e pistache no próprio guia</li>
-              <li>Ficha para registrar pesos e repetir a montagem de cada unidade</li>
+              <li>Recheios cremosos e montagem dos sabores gourmet</li>
+              <li>Ficha para registrar pesos e repetir a montagem</li>
             </ul>
           </div>
         </div>
@@ -1736,10 +1738,8 @@
           <div class="in"><span class="n">Módulo 3</span>
             <h3>Apresentação e finalização</h3>
             <ul>
-              <li>3 coberturas e decoração natalina</li>
-              <li>Embalagens para presente e venda</li>
-              <li>O que colocar na etiqueta e como preencher as informações do produto</li>
-              <li>Conservação, transporte e checklist antes da entrega</li>
+              <li>Coberturas, decoração e embalagens</li>
+              <li>Etiquetas, conservação e transporte</li>
             </ul>
           </div>
         </div>
@@ -1747,10 +1747,8 @@
           <div class="in"><span class="n">Módulo 4</span>
             <h3>Vendendo no Natal</h3>
             <ul>
-              <li>Custo de cada ingrediente e da unidade</li>
-              <li>Como formar o preço com margem</li>
-              <li>Divulgação e ficha para organizar suas encomendas</li>
-              <li>Plano de produção em 7 etapas</li>
+              <li>Custos, preço com margem e divulgação</li>
+              <li>Ficha de encomendas e plano de produção</li>
             </ul>
           </div>
         </div>
@@ -1763,96 +1761,37 @@
 
 
 
-  <!-- ERROS -->
+  <!-- PÚBLICO -->
   <section>
-    <div class="wrap erros-grid">
-      <img class="reveal" src="img/erros.jpg" alt="Página do guia com os 4 erros mais comuns e como corrigir"
-        loading="lazy">
-      <div class="reveal">
-        <p class="eyebrow">E se der errado?</p>
-        <h2>O guia te diz <em>o porquê</em> e como corrigir.</h2>
-        <p>Consulte as <b>causas prováveis e correções</b> dos quatro erros mais comuns e registre os ajustes da próxima fornada.</p>
-        <ul class="lista-check">
-          <li>Checklist antes, durante e depois da primeira fornada</li>
-          <li>Quadro de sinais de atenção no forno</li>
-          <li>Espaço para anotar seus testes e ajustes</li>
-        </ul>
-      </div>
+    <div class="wrap narrow">
+      <h2>Esse guia foi feito <em>para você que:</em></h2>
+      <ul class="lista-check publico-lista">
+        <li>Nunca fez panetone e quer aprender do início.</li>
+        <li>Já tentou fazer, mas a massa ficou seca ou pesada.</li>
+        <li>Quer aprender recheios e acabamentos gourmet.</li>
+        <li>Quer preparar panetones para a família ou começar a receber encomendas.</li>
+        <li>Quer entender melhor seus custos e definir um preço.</li>
+      </ul>
+      <p class="publico-nota">Você não precisa ter experiência profissional em confeitaria.</p>
     </div>
   </section>
 
-
-
-  <!-- PÚBLICO -->
-  <section>
-    <div class="wrap">
-      <div class="azevinho" aria-hidden="true"></div>
-      <p class="eyebrow">Para quem é</p>
-      <h2>Feito para quem <em>quer começar agora.</em></h2>
-      <p class="lead">Não precisa de experiência nem de equipamento profissional.</p>
-      <div class="pub" id="pub">
-        <div class="esc reveal"><span class="ic"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect x="12" y="9" width="28" height="38" rx="3" stroke="#245c3f" stroke-width="2.2" />
-              <path d="M12 15h-3M12 23h-3M12 31h-3M12 39h-3" stroke="#245c3f" stroke-width="2.2" />
-              <path d="M18 18h16M18 24h16M18 30h10" stroke="#b8954f" stroke-width="2" />
-              <ellipse cx="45" cy="51" rx="9" ry="3.5" fill="#f3e2bd" stroke="#b8954f" stroke-width="2" />
-              <path d="M36 51v-4M54 51v-4" stroke="#b8954f" stroke-width="2" />
-              <ellipse cx="45" cy="45" rx="9" ry="3.5" fill="#f8ecd0" stroke="#b8954f" stroke-width="2" />
-              <path d="M36 45v-4M54 45v-4" stroke="#b8954f" stroke-width="2" />
-              <ellipse cx="45" cy="40" rx="9" ry="3.5" fill="#fbf3df" stroke="#b8954f" stroke-width="2" />
-            </svg></span>
-          <h3>Renda extra no Natal</h3>
-          <p>Quer montar um cardápio e aceitar encomendas.</p>
-        </div>
-        <div class="esc reveal"><span class="ic"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect x="14" y="30" width="36" height="24" rx="2" stroke="#245c3f" stroke-width="2.2" />
-              <rect x="11" y="22" width="42" height="9" rx="2" stroke="#245c3f" stroke-width="2.2" />
-              <path d="M32 22v32" stroke="#b3162c" stroke-width="3.2" />
-              <path d="M32 21c-4-9-15-10-14-3 1 5 10 4 14 3z" stroke="#b3162c" stroke-width="2.2" fill="#f6d5da" />
-              <path d="M32 21c4-9 15-10 14-3-1 5-10 4-14 3z" stroke="#b3162c" stroke-width="2.2" fill="#f6d5da" />
-              <path d="M20 40h6M38 46h6" stroke="#b8954f" stroke-width="1.8" />
-            </svg></span>
-          <h3>Quer presentear</h3>
-          <p>Panetone caprichado, embalado e com cara de presente.</p>
-        </div>
-        <div class="esc reveal"><span class="ic"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M44 6l-9 24" stroke="#5a3a22" stroke-width="2.4" />
-              <path d="M35 30c-6-3-9-9-7-13s9-2 11 4c2 5-1 8-4 9z" stroke="#b8954f" stroke-width="2" />
-              <path d="M35 30c-3-4-4-10-1-12M35 30c2-5 3-9 2-12" stroke="#b8954f" stroke-width="1.6" />
-              <path d="M8 34h48c0 12-10 20-24 20S8 46 8 34z" fill="#f6ecd9" stroke="#245c3f" stroke-width="2.2" />
-              <path d="M14 34c2-4 7-6 12-5 4-3 10-3 13 1 4-1 9 1 11 4" stroke="#b8954f" stroke-width="2"
-                fill="#fffaf0" />
-              <circle cx="18" cy="24" r="1.2" fill="#b8954f" />
-              <circle cx="23" cy="20" r="1" fill="#b8954f" />
-              <circle cx="50" cy="26" r="1.2" fill="#b8954f" />
-            </svg></span>
-          <h3>Nunca fez panetone</h3>
-          <p>Precisa de passo a passo com foto, sem termos difíceis.</p>
-        </div>
-        <div class="esc reveal"><span class="ic"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M8 40h20l-3 12H11z" stroke="#b8954f" stroke-width="2" fill="#fbf3df" />
-              <path d="M12 40l1 12M17 40v12M22 40l-1 12" stroke="#b8954f" stroke-width="1.3" />
-              <circle cx="18" cy="32" r="9" fill="#4a2a18" stroke="#5a3a22" stroke-width="2" />
-              <path d="M14 28l1.5 1M20 27l1 1.5M22 32l1.5-.5M15 34l1 1M18 30l-1 1" stroke="#f3e2bd"
-                stroke-width="1.6" />
-              <path d="M36 40h20l-3 12H39z" stroke="#b8954f" stroke-width="2" fill="#fbf3df" />
-              <path d="M40 40l1 12M45 40v12M50 40l-1 12" stroke="#b8954f" stroke-width="1.3" />
-              <circle cx="46" cy="32" r="9" fill="#4a2a18" stroke="#5a3a22" stroke-width="2" />
-              <path d="M42 28l1.5 1M48 27l1 1.5M50 32l1.5-.5M43 34l1 1M46 30l-1 1" stroke="#e8b4bd"
-                stroke-width="1.6" />
-              <path d="M32 6c0 5-4 6-4 10a4 4 0 0 0 8 0c0-4-4-5-4-10z" stroke="#b3162c" stroke-width="2"
-                fill="#f6d5da" />
-            </svg></span>
-          <h3>Já faz doces</h3>
-          <p>Quer incluir panetone gourmet no que já vende.</p>
-        </div>
+  <!-- BÔNUS RABANADA -->
+  <section class="rabanada-destaque">
+    <div class="wrap rabanada-grid">
+      <img class="rabanada-capa" src="img/capa-rabanada-560.jpg" width="560" height="791" loading="lazy" decoding="async" alt="Capa do bônus Receitas de Rabanada Recheada">
+      <div class="rabanada-texto">
+        <p><b class="bonus-selo">BÔNUS INCLUSO</b></p>
+        <h2>E para deixar seu Natal <em>ainda mais completo…</em></h2>
+        <p>Você também recebe o guia <b>Receitas de Rabanada Recheada</b>.</p>
+        <ul class="lista-check">
+          <li>Rabanada clássica com canela e recheada de doce de leite</li>
+          <li>Brigadeiro, coco e frutas vermelhas</li>
+          <li>Variações, acabamentos, organização e conservação</li>
+        </ul>
+        <p class="rabanada-nota">As imagens do material são ilustrativas, geradas por inteligência artificial.</p>
+        <div class="cta"><a class="btn" href="#oferta">Quero o guia com os bônus</a></div>
       </div>
-      <p class="nao"><b>Este guia não é para você</b> se procura técnicas de panificação profissional com fermentação
-        natural ou uso de pré-fermentos de longa duração. Ele é <b>simples e direto</b>, voltado para quem está começando.</p>
     </div>
   </section>
 
@@ -1860,7 +1799,7 @@
   <section class="oferta" id="oferta">
     <div class="wrap">
       <p class="eyebrow">O que você recebe na compra</p>
-      <h2>Seu guia completo <em>+ bônus especiais.</em></h2>
+      <h2>Tudo o que você precisa para começar <em>em um único acesso.</em></h2>
       <p class="lead">Tudo para preparar seus panetones e começar suas encomendas.</p>
       <div class="box">
         <div class="oferta-preview">
@@ -1870,20 +1809,20 @@
           </picture>
         </div>
         <ul>
-          <li>Guia ilustrado de 41 páginas, com 4 módulos</li>
-          <li>Receitas, recheios e orientações de preparo</li>
-          <li>Sabores caramelo com nozes e pistache incluídos no guia</li>
-          <li>Custos, preços e organização de encomendas</li>
+          <li>Panetone Gourmet Fácil — 41 páginas</li>
+          <li>Passo a passo da massa, recheios e montagem</li>
+          <li>5 sabores gourmet</li>
+          <li>Custos, precificação e orientações de produção</li>
         </ul>
         <div class="bonus-oferta">
           <h3>Seus bônus inclusos</h3>
           <ul>
             <li>8 etiquetas para imprimir</li>
-            <li>Receitas de rabanada recheada</li>
+            <li>PDF de rabanadas clássicas e recheadas, com orientações de preparo e organização</li>
           </ul>
         </div>
         <div class="preco">
-          <div class="de">De <s>R$ 49,90</s> por apenas</div>
+          <div class="de">Tudo por apenas</div>
           <div class="por"><small>R$</small>19,99</div>
           <div class="obs">Pagamento único · sem mensalidade</div>
         </div>
@@ -1893,30 +1832,13 @@
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg></a>
-        <div class="seguro"><span>🔒 Compra segura</span><span>⚡ PDFs no e-mail após a confirmação</span><span>🛡️ Garantia de 7
-            dias</span></div>
-      </div>
-      <p class="ancora">Custa <b>menos que um panetone gourmet na loja</b> e te ensina a fazer quantos quiser.</p>
-    </div>
-  </section>
-
-  <!-- GARANTIA -->
-  <section>
-    <div class="wrap">
-      <div class="gar reveal">
-        <div class="s">
-          <div><b>7</b>DIAS</div>
-        </div>
-        <div>
-          <h3>Garantia incondicional de 7 dias</h3>
-          <p>Baixe, leia com calma e teste a receita. Se achar que o guia não é para você, é só pedir o reembolso dentro
-            de 7 dias e devolvemos 100% do valor. Sem perguntas. O risco é todo nosso.</p>
-        </div>
+        <div class="seguro"><span>🔒 Pagamento seguro</span><span>Acesso digital</span><span>Garantia de 7 dias</span></div>
+        <div class="garantia-oferta"><b>🛡️ Você tem 7 dias para conhecer o material</b><p>Se dentro do prazo de garantia você entender que o conteúdo não é para você, poderá solicitar o reembolso conforme as condições da plataforma de pagamento.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS: adicionar aqui somente prints REAIS de clientes deste guia -->
+
 
   <!-- FAQ -->
   <section class="alt">
@@ -1925,58 +1847,12 @@
       <p class="eyebrow">Dúvidas</p>
       <h2>Perguntas frequentes</h2>
       <div class="faq" style="margin-top:30px">
-        <details>
-          <summary>Ainda dá tempo de fazer para este Natal?</summary>
-          <p>Sim. O acesso é imediato e a massa é simplificada, sem pré-fermento: dá para fazer o primeiro teste ainda
-            esta semana. O guia traz um plano de produção em 7 etapas para organizar a fornada e as encomendas.</p>
-        </details>
-        <details>
-          <summary>Nunca fiz panetone. Vou conseguir?</summary>
-          <p>O guia foi feito para iniciantes. O preparo da massa tem fotos de referência de sova, fermentação e forno,
-            além de orientações para corrigir erros comuns. A recomendação é fazer uma fornada de teste antes de aceitar
-            encomendas.</p>
-        </details>
-        <details>
-          <summary>Preciso de batedeira ou equipamento profissional?</summary>
-          <p>Não. Você precisa de balança digital, tigelas, formas de panetone e, de preferência, um termômetro
-            culinário. A batedeira com gancho ajuda, mas dá para sovar à mão em pequenas quantidades.</p>
-        </details>
-        <details>
-          <summary>Quantos panetones rende a receita?</summary>
-          <p>A massa-base rende 2 panetones de cerca de 488 g de massa crua cada. O guia explica como recalcular quando
-            você adiciona gotas de chocolate e recheio.</p>
-        </details>
-        <details>
-          <summary>O produto é físico ou digital?</summary>
-          <p>Você recebe 3 arquivos digitais em PDF: o guia de 41 páginas, organizado em 4 módulos e com as receitas
-            de caramelo com nozes e pistache já incluídas, uma folha com 8 etiquetas e o bônus de receitas de rabanada recheada.
-            Você pode consultar o guia no celular ou no computador e imprimir o material. Não há envio de produto físico.</p>
-        </details>
-        <details>
-          <summary>Como é o bônus de etiquetas?</summary>
-          <p>Você recebe um PDF separado com uma folha de 8 etiquetas para imprimir, recortar e preencher à mão.
-            Basta imprimir a folha e completar os campos de
-            sabor, ingredientes, alérgenos, peso líquido, lote, fabricação, validade e conservação.</p>
-        </details>
-        <details>
-          <summary>Posso vender os panetones que eu fizer?</summary>
-          <p>Sim. O guia permite a produção e venda dos seus próprios panetones e ainda traz orientações de etiqueta,
-            conservação e transporte. Siga as exigências sanitárias da sua cidade.</p>
-        </details>
-        <details>
-          <summary>O guia ensina a calcular o preço?</summary>
-          <p>Sim. O Módulo 4 mostra como calcular o custo de cada ingrediente, o custo completo por unidade e o preço de
-            venda com margem. Os números do guia são exemplos; você aplica com os seus custos.</p>
-        </details>
-        <details>
-          <summary>Como recebo o acesso?</summary>
-          <p>Assim que o pagamento é confirmado, você recebe o acesso no e-mail informado na compra. No Pix, costuma
-            levar poucos minutos. Confira se digitou o e-mail corretamente.</p>
-        </details>
-        <details>
-          <summary>E se eu não gostar?</summary>
-          <p>Você tem 7 dias de garantia. Se não gostar, pede o reembolso e recebe 100% do valor pago.</p>
-        </details>
+        <details><summary>É indicado para iniciantes?</summary><p>Sim. O guia começa pela massa e traz fotos de referência. Faça uma fornada de teste antes de aceitar encomendas.</p></details>
+        <details><summary>O material é físico ou digital?</summary><p>Digital. Você recebe o guia, as etiquetas e o bônus de rabanada em PDF.</p></details>
+        <details><summary>Como recebo o acesso?</summary><p>Após a confirmação do pagamento, o acesso é enviado para o e-mail informado na compra.</p></details>
+        <details><summary>Preciso de equipamentos profissionais?</summary><p>Não. Você pode sovar à mão; balança, tigelas e formas são necessárias, e um termômetro culinário é recomendado.</p></details>
+        <details><summary>O bônus está incluso no preço?</summary><p>Sim. As receitas de rabanada e a folha de 8 etiquetas estão incluídas.</p></details>
+        <details><summary>Existe garantia?</summary><p>Sim. Você tem 7 dias para solicitar o reembolso conforme as condições da plataforma de pagamento.</p></details>
       </div>
     </div>
   </section>
@@ -1986,16 +1862,10 @@
     <div class="wrap">
       <p class="eyebrow">Faltam <span id="cd2">poucos</span> dias</p>
       <h2>Comece sua primeira fornada e <em>prepare seu cardápio de Natal.</em></h2>
-      <p>Use o guia para fazer uma fornada de teste, registrar os ajustes e calcular seus preços.
-        Depois, organize seu cardápio e as primeiras encomendas.</p>
-      <div class="cta"><a class="btn"
-          href="#oferta">Quero
-          começar hoje por R$ 19,99</a>
-        <div class="micro" style="color:#cdb9a0"><span>Acesso imediato</span><span>Garantia de 7 dias</span></div>
+      <p>Tenha o passo a passo do Panetone Gourmet Fácil e o bônus de Rabanadas Recheadas por R$ 19,99.</p>
+      <div class="cta"><a class="btn js-checkout" href="https://pay.wiapy.com/TSHXIRyJlIll?utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term=">Quero começar hoje por R$ 19,99</a>
+        <div class="micro" style="color:#cdb9a0">Acesso digital imediato após a confirmação do pagamento.</div>
       </div>
-      <div class="ps"><b>P.S.</b> Você não precisa de 100 receitas para começar. Precisa de <b>uma base para praticar</b>,
-        sabores para montar seu cardápio e ferramentas para calcular preços e organizar pedidos. É isso que está no guia, por menos que um
-        panetone de loja.</div>
     </div>
   </section>
 
@@ -2011,6 +1881,30 @@
 
 
   <script>
+    // Ativa o som mediante interação do visitante.
+    (function () {
+      var video = document.querySelector('.video-produto'), botao = document.querySelector('.video-som');
+      function carregarVideo() {
+        if (!video.dataset.src) return;
+        video.src = video.dataset.src;
+        delete video.dataset.src;
+        video.load();
+        video.play().catch(function () {});
+      }
+      if ('IntersectionObserver' in window) {
+        var observadorVideo = new IntersectionObserver(function (entradas) {
+          if (entradas[0].isIntersecting) { carregarVideo(); observadorVideo.disconnect(); }
+        }, { rootMargin: '400px' });
+        observadorVideo.observe(video);
+      } else { carregarVideo(); }
+      botao.addEventListener('click', function () {
+        carregarVideo();
+        video.muted = false;
+        video.play().catch(function () {});
+        botao.hidden = true;
+      });
+      video.addEventListener('volumechange', function () { botao.hidden = !video.muted; });
+    })();
     // contagem até o Natal
     (function () {
       function tick() {
